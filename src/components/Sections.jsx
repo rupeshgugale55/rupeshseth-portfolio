@@ -66,7 +66,7 @@ export function News() {
                 duration: 0.5,
               }}
               whileHover={{ y: -6 }}
-              onClick={() => setSelected(article)}
+              onClick={() => window.open(article.link, "_blank")}
               className="
                 bg-white
                 rounded-[28px]
@@ -80,7 +80,15 @@ export function News() {
               "
             >
               <div className="h-1 bg-[#2e7d32]" />
-
+              {article.image && (
+                <div className="w-full h-56 overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
               <div className="p-7">
                 <div className="flex items-center gap-3 mb-4">
                   <span
@@ -191,6 +199,15 @@ export function News() {
                   </button>
                 </div>
 
+                {selected.image && (
+                  <div className="w-full h-[300px] overflow-hidden rounded-2xl mb-6">
+                    <img
+                      src={selected.image}
+                      alt={selected.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">
                   {selected.title}
                 </h3>
@@ -228,7 +245,6 @@ export function Activities() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* HEADER */}
-
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -236,7 +252,7 @@ export function Activities() {
           transition={{ duration: 0.7 }}
           className="text-center mb-20"
         >
-          <p className="text-[#f57c00] font-semibold uppercase tracking-wide text-sm mb-4">
+          <p className="text-[#f57c00] font-semibold uppercase tracking-[3px] text-sm mb-4">
             Actions & Contributions
           </p>
 
@@ -244,66 +260,88 @@ export function Activities() {
             <span className="block text-[clamp(2rem,5vw,4rem)] bg-gradient-to-r from-[#14532d] via-[#f97316] to-[#b45309] bg-clip-text text-transparent px-2 py-1">
               Activities & Events
             </span>
+
             <div className="mx-auto mt-5 h-1.5 w-28 rounded-full bg-gradient-to-r from-[#15803d] via-[#f97316] to-[#b45309] shadow-md" />
           </h2>
         </motion.div>
 
         {/* GRID */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          {ACTIVITIES.map((act, i) => {
+            const Icon = act.icon;
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ACTIVITIES.map((act, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -6 }}
-              className="
-                bg-white
-                rounded-[28px]
-                p-7
-                border
-                border-gray-100
-                hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)]
-                transition-all
-                duration-300
-              "
-            >
-              <div className="flex items-start gap-5">
-                <div
-                  className="
-                  w-14
-                  h-14
-                  rounded-2xl
-                  bg-[#f57c00]/10
-                  flex
-                  items-center
-                  justify-center
-                  text-[#f57c00]
-                  text-2xl
-                  flex-shrink-0
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                whileHover={{ y: -8 }}
+                className="
+                  group
+                  relative
+                  bg-white/90
+                  backdrop-blur-xl
+                  rounded-[30px]
+                  p-7
+                  border
+                  border-[#e8e6df]
+                  overflow-hidden
+                  transition-all
+                  duration-500
+                  hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)]
+                  hover:border-[#f57c00]/20
                 "
-                >
-                  {act.icon}
+              >
+                {/* TOP GLOW */}
+                <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#14532d] via-[#f57c00] to-[#b45309]" />
+
+                <div className="flex items-start gap-5">
+                  {/* ICON */}
+                  <div
+                    className="
+                      w-15
+                      h-15
+                      rounded-2xl
+                      bg-gradient-to-br
+                      from-[#14532d]/10
+                      via-[#f57c00]/10
+                      to-[#b45309]/10
+                      flex
+                      items-center
+                      justify-center
+                      text-[#f57c00]
+                      flex-shrink-0
+                      transition-all
+                      duration-300
+                      group-hover:scale-110
+                    "
+                  >
+                    <Icon className="w-7 h-7 stroke-[2.2]" />
+                  </div>
+
+                  {/* CONTENT */}
+                  <div className="flex-1">
+                    <span className="inline-flex items-center rounded-full bg-[#f57c00]/10 px-3 py-1 text-xs font-semibold tracking-wide text-[#f57c00] mb-4">
+                      {act.category} • {act.date}
+                    </span>
+
+                    <h4 className="text-xl font-extrabold text-gray-900 mb-4 leading-snug">
+                      {act.title}
+                    </h4>
+
+                    <p className="text-gray-600 leading-7 text-[15.5px]">
+                      {act.description}
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <span className="text-sm   font-medium text-[#f57c00]">
-                    {act.category} • {act.date}
-                  </span>
-
-                  <h4 className="text-xl font-bold text-gray-900 mb-6">
-                    {act.title}
-                  </h4>
-
-                  <p className="text-gray-600 leading-6 text-[16px]">
-                    {act.description}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                {/* HOVER EFFECT */}
+                <div className="absolute inset-0 rounded-[30px] border border-transparent group-hover:border-[#f57c00]/10 pointer-events-none transition-all duration-500" />
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

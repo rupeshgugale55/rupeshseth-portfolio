@@ -225,7 +225,7 @@ export default function App() {
             <News />
             <Activities />
             <VisitingCards />
-            <Documents />
+            {/* <Documents /> */}
              <Vision />
             <Contact />
           </main>

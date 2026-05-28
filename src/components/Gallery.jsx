@@ -335,13 +335,13 @@ export default function Gallery() {
         <motion.div
           layout
           className="
-  columns-1
-  sm:columns-2
-  lg:columns-3
-  xl:columns-4
-  gap-5
-  space-y-5
-"
+    columns-2
+    sm:columns-2
+    lg:columns-3
+    xl:columns-4
+    gap-4
+    space-y-4
+  "
         >
           <AnimatePresence>
             {filtered.map((item) => (
@@ -399,8 +399,7 @@ max-w-5xl                w-full
 
               <div
                 className="
-                  h-[280px]
-                  flex
+                   flex
                   items-center
                   justify-center
                   relative
@@ -429,10 +428,12 @@ max-w-5xl                w-full
                 </button>
                 <div
                   className="
-    h-[75vh]
     relative
     overflow-hidden
     bg-black
+    flex
+    items-center
+    justify-center
   "
                 >
                   <button
@@ -460,50 +461,30 @@ max-w-5xl                w-full
                       src={lightbox.media}
                       controls
                       autoPlay
-                      className="w-full h-full object-contain"
+                      className=" max-w-full
+  max-h-[85vh]
+  w-auto
+  h-auto
+  object-contain
+  block"
                     />
                   ) : (
                     <img
                       src={lightbox.media}
                       alt={lightbox.title}
-                      className="w-full h-full object-contain"
+                      className=" max-w-full
+  max-h-[85vh]
+  w-auto
+  h-auto
+  object-contain
+  block"
                     />
                   )}
                 </div>{" "}
               </div>
 
               {/* CONTENT */}
-
-              <div className="p-8 text-center">
-                <h3
-                  className="
-                  text-3xl
-                  font-bold
-                  text-gray-900
-                  mb-4
-                "
-                >
-                  {lightbox.title}
-                </h3>
-
-                <div
-                  className="
-                    inline-flex
-                    px-4
-                    py-1.5
-                    rounded-full
-                    text-sm
-                    font-medium
-                    mb-6
-                  "
-                  style={{
-                    background: `${lightbox.color}15`,
-                    color: lightbox.color,
-                  }}
-                >
-                  {lightbox.category}
-                </div>
-              </div>
+ 
             </motion.div>
           </motion.div>
         )}

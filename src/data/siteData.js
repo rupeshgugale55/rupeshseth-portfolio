@@ -1,3 +1,21 @@
+
+import {
+  Sprout,
+  Building2,
+  HeartHandshake,
+  Zap,
+  Landmark,
+  TrendingUp,
+  Globe2,
+  UtensilsCrossed,
+  Megaphone,
+  HandHeart,
+  BriefcaseBusiness,
+  Hotel,
+  Drama,
+} from "lucide-react";
+
+
 export const CLIENT = {
   name: "Rupeshseth Hemantji Gugale",
   shortName: "Rupeshseth",
@@ -21,13 +39,68 @@ export const ABOUT = {
 };
 
 export const TIMELINE = [
-  { year: "Early Years", title: "The Foundation", description: "Born into a respected family with freedom fighter legacy. Early exposure to values, discipline, and service.", icon: "🌱", color: "green" },
-  { year: "Pune Era", title: "The Learning Years", description: "Worked in hospitality from ground level — cleaning utensils, managing operations. Simultaneously engaged in construction liaisoning, finance, and politics alongside his brother.", icon: "🏗️", color: "orange" },
-  { year: "2013", title: "The Turning Point", description: "The passing of beloved grandfather Shri Kakanmalji Chunilalji Gugale — his greatest mentor and guiding force. A profound emotional transformation that deepened his spiritual journey.", icon: "🙏", color: "gold" },
-  { year: "2015", title: "The Leap of Faith", description: "Decided to leave the comfort of Pune and pursue an independent identity. A courageous decision that would define the next chapter of his life.", icon: "⚡", color: "green" },
-  { year: "2016", title: "Mumbai Begins", description: "Arrived in Mumbai with zero financial support from family. Started building his own empire from scratch — pure self-belief, vision, and hard work.", icon: "🌆", color: "orange" },
-  { year: "2016–2020", title: "The Rise", description: "Established himself across hospitality, finance, investments, and social work. Built national-level connections and a reputation for integrity and leadership.", icon: "📈", color: "green" },
-  { year: "2020–Present", title: "Legacy Building", description: "Expanded into film production, politics, and social impact. Contributed to Swami Samarth temple construction. Now working on a worldwide application for affordable global solutions.", icon: "🌍", color: "gold" },
+  {
+    year: "Early Years",
+    title: "The Foundation",
+    description:
+      "Born into a respected family with freedom fighter legacy. Early exposure to values, discipline, and service.",
+    icon: Sprout,
+    color: "green",
+  },
+
+  {
+    year: "Pune Era",
+    title: "The Learning Years",
+    description:
+      "Worked in hospitality from ground level — cleaning utensils, managing operations. Simultaneously engaged in construction liaisoning, finance, and politics alongside his brother.",
+    icon: Building2,
+    color: "orange",
+  },
+
+  {
+    year: "2013",
+    title: "The Turning Point",
+    description:
+      "The passing of beloved grandfather Shri Kakanmalji Chunilalji Gugale — his greatest mentor and guiding force. A profound emotional transformation that deepened his spiritual journey.",
+    icon: HeartHandshake,
+    color: "gold",
+  },
+
+  {
+    year: "2015",
+    title: "The Leap of Faith",
+    description:
+      "Decided to leave the comfort of Pune and pursue an independent identity. A courageous decision that would define the next chapter of his life.",
+    icon: Zap,
+    color: "green",
+  },
+
+  {
+    year: "2016",
+    title: "Mumbai Begins",
+    description:
+      "Arrived in Mumbai with zero financial support from family. Started building his own empire from scratch — pure self-belief, vision, and hard work.",
+    icon: Landmark,
+    color: "orange",
+  },
+
+  {
+    year: "2016–2020",
+    title: "The Rise",
+    description:
+      "Established himself across hospitality, finance, investments, and social work. Built national-level connections and a reputation for integrity and leadership.",
+    icon: TrendingUp,
+    color: "green",
+  },
+
+  {
+    year: "2020–Present",
+    title: "Legacy Building",
+    description:
+      "Expanded into film production, politics, and social impact. Contributed to Swami Samarth temple construction. Now working on a worldwide application for affordable global solutions.",
+    icon: Globe2,
+    color: "gold",
+  },
 ];
 
 export const SPIRITUALITY = {
@@ -106,18 +179,81 @@ export const VISION = {
 };
 
 export const NEWS_ARTICLES = [
-  { title: "Rising Leader of Maharashtra", source: "Maharashtra Times", date: "2023", category: "Leadership", excerpt: "Rupeshseth Gugale recognized for outstanding contribution to community development and business leadership in the region.", type: "article" },
-  { title: "Social Impact Award 2022", source: "Local Authority", date: "2022", category: "Social Work", excerpt: "Recognized for exceptional service to the community and contribution toward welfare activities across Mumbai.", type: "award" },
-  { title: "Temple Contribution Ceremony", source: "Community News", date: "2021", category: "Spirituality", excerpt: "Rupeshseth Gugale contributes toward construction of Swami Samarth temple in Shaniwar Peth, Pune.", type: "event" },
+  {
+    title:
+      "Silly Monks & Aurous Entertainment Announce Film Production Partnership",
+    source: "The Hans India",
+    date: "18 Jul 2019",
+    category: "Entertainment",
+    excerpt:
+      "Aurous Avatar Entertainment partnered with Silly Monks Entertainment to produce films across South Indian, Marathi, and Gujarati cinema industries.",
+    type: "news",
+    link: "https://www.thehansindia.com/business/silly-monks-aurous-in-the-pact-to-produce-films-547722",
+    image: "/images/news/news1.png",
+  },
+
+  {
+    title: "Ashwamedham Telugu Movie Release",
+    source: "The Times of India",
+    date: "6 Dec 2019",
+    category: "Film Production",
+    excerpt:
+      "Ashwamedham, directed by Nitin Gawde, featured Dhruva Karunakar, Vennela Kishore, Suman, and Priyadarshi Pullikonda under Aurous Avatar Entertainment.",
+    type: "movie",
+    link: "https://timesofindia.indiatimes.com/entertainment/telugu/movie-details/ashwamedham/movieshow/70433935.cms",
+    image: "/images/news/news2.png",
+  },
 ];
 
 export const ACTIVITIES = [
-  { title: "Community Feeding Drive", category: "Social", date: "March 2024", description: "Organized large-scale community meal distribution for underprivileged families across Mumbai suburbs.", icon: "🍱" },
-  { title: "Political Rally Leadership", category: "Politics", date: "January 2024", description: "Led community awareness rally focusing on local development, infrastructure, and citizen rights.", icon: "📢" },
-  { title: "Swami Samarth Jayanti", category: "Spiritual", date: "April 2024", description: "Organized grand celebration of Swami Samarth Jayanti with community prayers, bhajans, and prasad distribution.", icon: "🙏" },
-  { title: "Business Mentorship Session", category: "Business", date: "February 2024", description: "Hosted session for young entrepreneurs sharing lessons from his journey — from humble beginnings to national presence.", icon: "💼" },
-  { title: "Hospitality Industry Summit", category: "Hospitality", date: "December 2023", description: "Participated as key speaker at Maharashtra hospitality industry summit, representing 15+ years of ground-level experience.", icon: "🏨" },
-  { title: "Cultural Program Organization", category: "Culture", date: "October 2023", description: "Organized traditional cultural program celebrating Maharashtra's rich heritage and the spirit of Chhatrapati Shivaji Maharaj.", icon: "🎭" },
+  {
+    title: "Community Feeding Drive",
+    category: "Social",
+    date: "March 2024",
+    description:
+      "Organized large-scale community meal distribution for underprivileged families across Mumbai suburbs.",
+    icon: UtensilsCrossed,
+  },
+  {
+    title: "Political Rally Leadership",
+    category: "Politics",
+    date: "January 2024",
+    description:
+      "Led community awareness rally focusing on local development, infrastructure, and citizen rights.",
+    icon: Megaphone,
+  },
+  {
+    title: "Swami Samarth Jayanti",
+    category: "Spiritual",
+    date: "April 2024",
+    description:
+      "Organized grand celebration of Swami Samarth Jayanti with community prayers, bhajans, and prasad distribution.",
+    icon: HandHeart,
+  },
+  {
+    title: "Business Mentorship Session",
+    category: "Business",
+    date: "February 2024",
+    description:
+      "Hosted session for young entrepreneurs sharing lessons from his journey — from humble beginnings to national presence.",
+    icon: BriefcaseBusiness,
+  },
+  {
+    title: "Hospitality Industry Summit",
+    category: "Hospitality",
+    date: "December 2023",
+    description:
+      "Participated as key speaker at Maharashtra hospitality industry summit, representing 15+ years of ground-level experience.",
+    icon: Hotel,
+  },
+  {
+    title: "Cultural Program Organization",
+    category: "Culture",
+    date: "October 2023",
+    description:
+      "Organized traditional cultural program celebrating Maharashtra's rich heritage and the spirit of Chhatrapati Shivaji Maharaj.",
+    icon: Drama,
+  },
 ];
 
 export const GALLERY_CATEGORIES = ["All", "Family", "Social Work", "Business", "Politics", "Events",];

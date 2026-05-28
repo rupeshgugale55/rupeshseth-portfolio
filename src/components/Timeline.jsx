@@ -19,7 +19,7 @@ function TimelineItem({ item, index, isLeft }) {
   };
 
   const color = colors[item.color] || colors.green;
-
+const Icon = item.icon;
   return (
     <div
       ref={ref}
@@ -87,8 +87,9 @@ function TimelineItem({ item, index, isLeft }) {
               background: color,
             }}
           />
-
-          <span className="relative z-10">{item.icon}</span>
+          <div className="relative z-10">
+            <Icon size={20} strokeWidth={2.2} />
+          </div>{" "}
         </motion.div>
       </div>
 

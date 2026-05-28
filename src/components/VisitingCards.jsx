@@ -21,25 +21,10 @@ const CARDS = [
     },
   },
 
+   
+
   {
     id: 2,
-    type: "Social & Community",
-
-    // FRONT IMAGE
-    frontImage: "/social-card.png",
-
-    // BACK CONTENT
-    back: {
-      bg: "linear-gradient(135deg, #7c2d12, #c2410c, #431407)",
-      title: "Social Leader & Community Builder",
-      email: "contact@rupeshsethGugale.com",
-      phone: "+91 98765 43210",
-      address: "Mumbai, Maharashtra, India",
-    },
-  },
-
-  {
-    id: 3,
     type: "Political",
 
     // FRONT IMAGE
