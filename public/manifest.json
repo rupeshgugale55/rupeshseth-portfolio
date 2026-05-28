@@ -1,0 +1,12 @@
+{
+  "name": "Rupeshseth Hemantji Gugle",
+  "short_name": "Rupeshseth Gugle",
+  "description": "Self-Made Leader, Entrepreneur, Spiritual Visionary & Social Servant",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff9f3",
+  "theme_color": "#2d8a47",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+:root {
+  --green: #2e7d32;
+  --green-light: #43a047;
+
+  --orange: #f57c00;
+  --orange-light: #fb8c00;
+
+  --bg: #f8f7f4;
+  --surface: #ffffff;
+
+  --text: #1f2937;
+  --text-light: #6b7280;
+
+  --border: #e5e7eb;
+}
+
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+  width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:var(--green);
+  border-radius:20px;
+}
+
+/* TEXT */
+
+.section-title{
+  font-size:clamp(2rem,4vw,4rem);
+  font-weight:700;
+  line-height:1.1;
+  letter-spacing:-1px;
+}
+
+.section-subtitle{
+  font-size:1rem;
+  color:var(--orange);
+  font-weight:500;
+}
+
+/* CARD */
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:32px;
+  transition:0.3s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,0.04);
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* BUTTON */
+
+.btn-primary{
+  background:var(--green);
+  color:white;
+  padding:14px 28px;
+  border:none;
+  border-radius:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.btn-primary:hover{
+  background:var(--green-light);
+  transform:translateY(-2px);
+}
+
+.btn-secondary{
+  background:white;
+  color:var(--text);
+  border:1px solid var(--border);
+  padding:14px 28px;
+  border-radius:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.btn-secondary:hover{
+  border-color:var(--orange);
+  color:var(--orange);
+}
+
+/* NAVBAR */
+
+.nav-link{
+  color:var(--text);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:500;
+  position:relative;
+  transition:0.3s ease;
+}
+
+.nav-link::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:var(--orange);
+  transition:0.3s ease;
+}
+
+.nav-link:hover::after{
+  width:100%;
+}
+
+.nav-link:hover{
+  color:var(--orange);
+}
+
+/* GRADIENT TEXT */
+
+.text-gradient{
+  background:linear-gradient(
+    135deg,
+    var(--green),
+    var(--orange)
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* IMAGE CARD */
+
+.image-card{
+  background:white;
+  border-radius:32px;
+  padding:20px;
+  border:1px solid var(--border);
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+/* REMOVE ALL THESE */
+/*
+.glow-green
+.glow-orange
+.glow-gold
+.glass
+.glass-dark
+.pulse-glow
+.shimmer-text
+.mandala-spin
+.quote-mark
+*/
