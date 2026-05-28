@@ -43,7 +43,7 @@ export default function Navbar() {
           {/* LOGO */}
           <a href="#hero" className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-1">
-          <img src="/public/logo.png" alt="" />
+          <img src="/logo.png" alt="" />
              </div>
 
             <div>

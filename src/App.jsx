@@ -64,7 +64,7 @@ function Preloader({ onDone }) {
           className="text-white font-black text-3xl"
           style={{ fontFamily: "Cinzel,serif" }}
         >
-          <img src="/public/favicon.png" alt="" />
+          <img src="/favicon.png" alt="" />
         </span>
       </motion.div>
 
