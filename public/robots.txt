@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rupeshsethgugle.com/sitemap.xml
+Sitemap:  https://rupeshseth.com/sitemap.xml

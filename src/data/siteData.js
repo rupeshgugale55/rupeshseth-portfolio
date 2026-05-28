@@ -6,7 +6,7 @@ export const CLIENT = {
   tagline: "From Humble Beginnings to National Leadership",
   hindiTagline: "संघर्ष से सफलता तक — एक प्रेरणादायक यात्रा",
   location: "Sinhassan Dormitroy hostel, Juhu Church Road, Next To Fresco Bakery, Vile Parle West, Juhu, Mumbai, Maharashtra - 49",
-  email: "contact@rupeshsethGugale.com",
+  email: "rupesh.h.gugale@gmail.com",
   phone: "+91 98334 51856",
   whatsapp: "919833451856",
 };
