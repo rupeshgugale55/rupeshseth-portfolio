@@ -5,223 +5,169 @@ import { X, ZoomIn } from "lucide-react";
 
 import { GALLERY_CATEGORIES } from "../data/siteData";
 
+const createItems = (
+  category,
+  count,
+  folder,
+  prefix,
+  color,
+  videoIndexes = [],
+) => {
+  return Array.from({ length: count }, (_, i) => {
+    const index = i + 1;
+
+    const isVideo = videoIndexes.includes(index);
+
+    return {
+      id: `${prefix}-${index}`,
+
+      category,
+
+      title: `${category} ${index}`,
+
+      type: isVideo ? "video" : "image",
+
+      media: `/images/gallery/${folder}/${prefix}${index}.${
+        isVideo ? "mp4" : "jpeg"
+      }`,
+
+      color,
+
+      aspect: i % 7 === 0 ? "tall" : i % 5 === 0 ? "wide" : "square",
+    };
+  });
+};
+
 /* =========================
    GALLERY ITEMS
 ========================= */
 
 const GALLERY_ITEMS = [
-  {
-    id: 1,
-    category: "Business",
-    title: "Business Meeting",
-    emoji: "💼",
-    color: "#2d8a47",
-    aspect: "tall",
-  },
-  {
-    id: 2,
-    category: "Social Work",
-    title: "Community Service",
-    emoji: "🤝",
-    color: "#e86a1a",
-    aspect: "wide",
-  },
-  {
-    id: 3,
-    category: "Spiritual",
-    title: "Temple Prayer",
-    emoji: "🙏",
-    color: "#d4a843",
-    aspect: "square",
-  },
-  {
-    id: 4,
-    category: "Family",
-    title: "Family Gathering",
-    emoji: "👨‍👩‍👧‍👦",
-    color: "#e86a1a",
-    aspect: "wide",
-  },
-  {
-    id: 5,
-    category: "Events",
-    title: "Leadership Event",
-    emoji: "🎤",
-    color: "#2d8a47",
-    aspect: "square",
-  },
-  {
-    id: 6,
-    category: "Politics",
-    title: "Political Rally",
-    emoji: "📢",
-    color: "#1a5c2a",
-    aspect: "tall",
-  },
-  {
-    id: 7,
-    category: "Hospitality",
-    title: "Hospitality Sector",
-    emoji: "🏨",
-    color: "#c45200",
-    aspect: "square",
-  },
-  {
-    id: 8,
-    category: "Social Work",
-    title: "Charity Event",
-    emoji: "❤️",
-    color: "#e86a1a",
-    aspect: "wide",
-  },
-  {
-    id: 9,
-    category: "Spiritual",
-    title: "Swami Samarth Jayanti",
-    emoji: "🕉️",
-    color: "#d4a843",
-    aspect: "square",
-  },
-  {
-    id: 10,
-    category: "Business",
-    title: "Investment Meeting",
-    emoji: "📊",
-    color: "#2d8a47",
-    aspect: "tall",
-  },
-  {
-    id: 11,
-    category: "Events",
-    title: "Cultural Program",
-    emoji: "🎭",
-    color: "#1a5c2a",
-    aspect: "wide",
-  },
-  {
-    id: 12,
-    category: "Family",
-    title: "Family Celebration",
-    emoji: "🎉",
-    color: "#e86a1a",
-    aspect: "square",
-  },
+  ...createItems("Family", 22, "family", "family", "#f97316"),
+
+  ...createItems("Social Work", 25, "social", "social", "#ea580c"),
+
+  ...createItems("Business", 11, "business", "business", "#15803d"),
+
+  ...createItems("Politics", 17, "politics", "politics", "#14532d"),
+
+  ...createItems("Events", 11, "event", "event", "#b45309", [5]),
 ];
+
+
 
 /* =========================
    GALLERY CARD
 ========================= */
 
 function GalleryCard({ item, onClick }) {
-  return (
-    <motion.div
-      layout
-      initial={{
-        opacity: 0,
-        y: 20,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-      }}
-      exit={{
-        opacity: 0,
-        scale: 0.95,
-      }}
-      transition={{ duration: 0.4 }}
-      whileHover={{ y: -6 }}
-      onClick={() => onClick(item)}
-      className={`
-        relative
-        overflow-hidden
-        rounded-[28px]
-        cursor-pointer
-        group
-        bg-white
-        border
-        border-gray-100
-        hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]
-        transition-all
-        duration-300
-        ${item.aspect === "tall" ? "row-span-2" : ""}
-        ${item.aspect === "wide" ? "col-span-2" : ""}
-      `}
-      style={{
-        minHeight: item.aspect === "tall" ? "300px" : "140px",
-      }}
-    >
-      {/* BG */}
+ return (
+   <motion.div
+     layout
+     initial={{ opacity: 0, y: 20 }}
+     animate={{ opacity: 1, y: 0 }}
+     exit={{ opacity: 0, scale: 0.95 }}
+     transition={{ duration: 0.35 }}
+     whileHover={{ y: -6 }}
+     onClick={() => onClick(item)}
+     className="
+      relative
+      overflow-hidden
+      rounded-[30px]
+      cursor-pointer
+      group
+      bg-white
+      shadow-sm
+      hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+      transition-all
+      duration-300
+      break-inside-avoid
+    "
+   >
+     {item.type === "video" ? (
+       <video
+         src={item.media}
+         muted
+         autoPlay
+         loop
+         playsInline
+         className="
+      w-full
+      h-auto
+      object-cover
+      transition-transform
+      duration-700
+      group-hover:scale-105
+    "
+       />
+     ) : (
+       <img
+         src={item.media}
+         alt={item.title}
+         loading="lazy"
+         className="
+      w-full
+      h-auto
+      object-cover
+      transition-transform
+      duration-700
+      group-hover:scale-105
+    "
+       />
+     )}
 
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{
-          background: `linear-gradient(135deg, ${item.color}10, ${item.color}20)`,
-        }}
-      />
+     {/* OVERLAY */}
 
-      {/* CONTENT */}
-
-      <div
-        className="
-        relative
-        z-10
-        h-full
-        flex
-        flex-col
-        items-center
-        justify-center
-        text-center
-        p-6
-      "
-      >
-        <div className="text-5xl mb-4">{item.emoji}</div>
-
-        <h3
-          className="
-          text-lg
-          font-semibold
-          text-gray-900
-          mb-2
-        "
-        >
-          {item.title}
-        </h3>
-
-        <div
-          className="
-            px-3
-            py-1
-            rounded-full
-            text-xs
-            font-medium
-          "
-          style={{
-            background: `${item.color}15`,
-            color: item.color,
-          }}
-        >
-          {item.category}
-        </div>
-      </div>
-
-      {/* HOVER */}
-
-      <div
-        className="
+     <div
+       className="
         absolute
         inset-0
-        bg-black/50
+        bg-gradient-to-t
+        from-black/70
+        via-black/10
+        to-transparent
+      "
+     />
+
+     {/* CATEGORY */}
+
+     <div
+       className="
+        absolute
+        bottom-4
+        left-4
+        px-4
+        py-2
+        rounded-full
+        text-sm
+        font-semibold
+        text-white
+        bg-white/20
+        backdrop-blur-md
+        z-10
+      "
+     >
+       {item.category}
+     </div>
+
+     {/* HOVER ICON */}
+
+     <div
+       className="
+        absolute
+        inset-0
+        flex
+        items-center
+        justify-center
         opacity-0
         group-hover:opacity-100
         transition-all
         duration-300
-        flex
-        items-center
-        justify-center
+        bg-black/20
       "
-      >
-        <div
-          className="
+     >
+       <div
+         className="
           w-14
           h-14
           rounded-full
@@ -229,13 +175,14 @@ function GalleryCard({ item, onClick }) {
           flex
           items-center
           justify-center
+          shadow-xl
         "
-        >
-          <ZoomIn size={22} className="text-gray-900" />
-        </div>
-      </div>
-    </motion.div>
-  );
+       >
+         <ZoomIn size={22} className="text-black" />
+       </div>
+     </div>
+   </motion.div>
+ );
 }
 
 /* =========================
@@ -388,13 +335,13 @@ export default function Gallery() {
         <motion.div
           layout
           className="
-            grid
-            grid-cols-2
-            md:grid-cols-3
-            lg:grid-cols-4
-            gap-5
-            auto-rows-[140px]
-          "
+  columns-1
+  sm:columns-2
+  lg:columns-3
+  xl:columns-4
+  gap-5
+  space-y-5
+"
         >
           <AnimatePresence>
             {filtered.map((item) => (
@@ -443,8 +390,7 @@ export default function Gallery() {
               className="
                 bg-white
                 rounded-[36px]
-                max-w-xl
-                w-full
+max-w-5xl                w-full
                 overflow-hidden
                 shadow-[0_30px_100px_rgba(0,0,0,0.15)]
               "
@@ -481,8 +427,49 @@ export default function Gallery() {
                 >
                   <X size={18} />
                 </button>
+                <div
+                  className="
+    h-[75vh]
+    relative
+    overflow-hidden
+    bg-black
+  "
+                >
+                  <button
+                    onClick={() => setLightbox(null)}
+                    className="
+      absolute
+      top-5
+      right-5
+      z-20
+      w-11
+      h-11
+      rounded-full
+      bg-white
+      flex
+      items-center
+      justify-center
+      shadow-lg
+    "
+                  >
+                    <X size={18} />
+                  </button>
 
-                <div className="text-8xl">{lightbox.emoji}</div>
+                  {lightbox.type === "video" ? (
+                    <video
+                      src={lightbox.media}
+                      controls
+                      autoPlay
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    <img
+                      src={lightbox.media}
+                      alt={lightbox.title}
+                      className="w-full h-full object-contain"
+                    />
+                  )}
+                </div>{" "}
               </div>
 
               {/* CONTENT */}
@@ -516,17 +503,6 @@ export default function Gallery() {
                 >
                   {lightbox.category}
                 </div>
-
-                <p
-                  className="
-                  text-gray-600
-                  leading-8
-                  text-[15px]
-                "
-                >
-                  Upload your actual photos through the Admin Panel to replace
-                  these placeholders.
-                </p>
               </div>
             </motion.div>
           </motion.div>

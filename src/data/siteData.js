@@ -120,4 +120,4 @@ export const ACTIVITIES = [
   { title: "Cultural Program Organization", category: "Culture", date: "October 2023", description: "Organized traditional cultural program celebrating Maharashtra's rich heritage and the spirit of Chhatrapati Shivaji Maharaj.", icon: "🎭" },
 ];
 
-export const GALLERY_CATEGORIES = ["All", "Family", "Social Work", "Business", "Spiritual", "Politics", "Events", "Hospitality"];
+export const GALLERY_CATEGORIES = ["All", "Family", "Social Work", "Business", "Politics", "Events",];
