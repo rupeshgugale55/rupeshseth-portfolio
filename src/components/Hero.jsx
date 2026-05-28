@@ -71,7 +71,7 @@ export default function Hero() {
       via-[#1f5c34]
       to-[#2e7d32]
       bg-clip-text
-      text-transparent mb-3
+      text-transparent mb-4
     "
               >
                 Rupeshseth
@@ -88,10 +88,10 @@ export default function Hero() {
       via-[#2e7d32]
       to-[#f57c00]
       bg-clip-text
-      text-transparent pb-2
+      text-transparent  
     "
               >
-                Hemantji Gugale
+                Hemantji Gugale <span className="block mt-3"> Patil (Jain)</span>
               </span>
             </h1>
 
@@ -229,7 +229,7 @@ export default function Hero() {
   "
           >
             {/* OUTER GLOW */}
-              {/* <div
+            {/* <div
                 className="
         absolute
         -inset-6

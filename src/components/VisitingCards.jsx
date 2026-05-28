@@ -7,51 +7,50 @@ const CARDS = [
   {
     id: 1,
     type: "Business",
-    front: {
-      bg: "linear-gradient(135deg, #1a5c2a, #2d8a47)",
-      name: "Rupeshseth Hemantji Gugale",
+
+    // FRONT IMAGE
+    frontImage: "/business-card.png",
+
+    // BACK CONTENT
+    back: {
+      bg: "linear-gradient(135deg, #0f172a, #1e293b, #111827)",
       title: "Entrepreneur & Business Leader",
       email: "contact@rupeshsethGugale.com",
       phone: "+91 98765 43210",
-      accent: "#d4a843",
-    },
-    back: {
-      bg: "linear-gradient(135deg, #2d3748, #1a1a2e)",
-      tagline: "Hospitality • Finance • Investments",
       address: "Mumbai, Maharashtra, India",
     },
   },
+
   {
     id: 2,
     type: "Social & Community",
-    front: {
-      bg: "linear-gradient(135deg, #e86a1a, #c45200)",
-      name: "Rupeshseth Hemantji Gugale",
+
+    // FRONT IMAGE
+    frontImage: "/social-card.png",
+
+    // BACK CONTENT
+    back: {
+      bg: "linear-gradient(135deg, #7c2d12, #c2410c, #431407)",
       title: "Social Leader & Community Builder",
       email: "contact@rupeshsethGugale.com",
       phone: "+91 98765 43210",
-      accent: "#f0c96a",
-    },
-    back: {
-      bg: "linear-gradient(135deg, #c45200, #6b2d00)",
-      tagline: "Service • Impact • Leadership",
       address: "Mumbai, Maharashtra, India",
     },
   },
+
   {
     id: 3,
     type: "Political",
-    front: {
-      bg: "linear-gradient(135deg, #e86a1a, #c45200)",
-      name: "Rupeshseth Hemantji Gugale",
-      title: "Social Leader & Community Builder",
+
+    // FRONT IMAGE
+    frontImage: "/images/visiting_card/political_card.png",
+
+    // BACK CONTENT
+    back: {
+      bg: "linear-gradient(135deg, #14532d, #166534, #052e16)",
+      title: "Political & Public Leader",
       email: "contact@rupeshsethGugale.com",
       phone: "+91 98765 43210",
-      accent: "#f0c96a",
-    },
-    back: {
-      bg: "linear-gradient(135deg, #c45200, #6b2d00)",
-      tagline: "Service • Impact • Leadership",
       address: "Mumbai, Maharashtra, India",
     },
   },
@@ -113,121 +112,91 @@ function VisitingCard({ card }) {
 
           <div
             className="
-              absolute
-              inset-0
-              rounded-[32px]
-              p-7
-              text-white
-              overflow-hidden
-              border
-              border-white/10
-            "
+      absolute
+      inset-0
+      rounded-[32px]
+      overflow-hidden
+      border
+      border-white/10
+    "
             style={{
-              background:
-                card.id === 1
-                  ? "linear-gradient(135deg, #2e7d32, #256c2b)"
-                  : "linear-gradient(135deg, #f57c00, #d97706)",
               backfaceVisibility: "hidden",
               boxShadow: "0 20px 50px rgba(0,0,0,0.12)",
             }}
           >
-            {/* TOP */}
-
-            <div className="flex justify-between items-start mb-10">
-              <div>
-                <p className="text-white/70 text-xs mb-2 uppercase tracking-[2px]">
-                  Rupeshseth
-                </p>
-
-                <h3 className="text-2xl font-bold leading-tight">
-                  {card.front.name}
-                </h3>
-              </div>
-
-              <div
-                className="
-                w-12
-                h-12
-                rounded-2xl
-                bg-white/10
-                backdrop-blur-sm
-                flex
-                items-center
-                justify-center
-                text-xl
-                font-bold
-              "
-              >
-                RG
-              </div>
-            </div>
-
-            {/* CENTER */}
-
-            <p className="text-white/80 text-md mb-10 leading-7 max-w-[220px]">
-              {card.front.title}
-            </p>
-
-            {/* BOTTOM */}
-
-            <div className="space-y-1 text-sm text-white/70">
-              <p>{card.front.phone}</p>
-
-              <p>{card.front.email}</p>
-            </div>
+            <img
+              src={card.frontImage}
+              alt={card.type}
+              className={`
+    w-full
+    h-full
+    ${card.id === 3 ? "object-cover scale-125" : "object-cover"}
+  `}
+            />
           </div>
 
           {/* BACK */}
 
           <div
             className="
-              absolute
-              inset-0
-              rounded-[32px]
-              p-7
-              text-white
-              flex
-              flex-col
-              items-center
-              justify-center
-              text-center
-              overflow-hidden
-              border
-              border-white/10
-            "
+      absolute
+      inset-0
+      rounded-[32px]
+      p-7
+      text-white
+      overflow-hidden
+      border
+      border-white/10
+    "
             style={{
-              background:
-                card.id === 1
-                  ? "linear-gradient(135deg, #1f2937, #111827)"
-                  : "linear-gradient(135deg, #7c2d12, #431407)",
+              background: card.back.bg,
               backfaceVisibility: "hidden",
               transform: "rotateY(180deg)",
               boxShadow: "0 20px 50px rgba(0,0,0,0.12)",
             }}
           >
+            {/* SHINING EFFECT */}
+
             <div
               className="
-              w-20
-              h-20
-              rounded-full
-              bg-white/10
-              backdrop-blur-sm
-              flex
-              items-center
-              justify-center
-              text-2xl
-              font-bold
-              mb-6
-            "
-            >
-              RHG
+        absolute
+        top-[-30%]
+        left-[-10%]
+        w-[140%]
+        h-[220px]
+        bg-white/10
+        rotate-12
+        blur-3xl
+      "
+            />
+
+            {/* CONTENT */}
+
+            <div className="relative z-10 h-full flex flex-col justify-between">
+              {/* TOP */}
+
+              <div>
+                <p className="text-white/40 uppercase tracking-[3px] text-xs mb-3">
+                  Rupeshseth
+                </p>
+
+                <h3 className="text-[22px] font-bold leading-snug">
+                  {card.back.title}
+                </h3>
+              </div>
+
+              {/* BOTTOM */}
+
+              <div className="space-y-3">
+                <p className="text-sm text-white/85">📧 {card.back.email}</p>
+
+                <p className="text-sm text-white/85">📱 {card.back.phone}</p>
+
+                <div className="w-16 h-[2px] bg-white/20 rounded-full" />
+
+                <p className="text-sm text-white/60">📍 {card.back.address}</p>
+              </div>
             </div>
-
-            <p className="text-xl font-semibold mb-4">{card.back.tagline}</p>
-
-            <div className="w-14 h-[2px] bg-white/20 rounded-full mb-4" />
-
-            <p className="text-white/60 text-sm">{card.back.address}</p>
           </div>
         </motion.div>
       </div>

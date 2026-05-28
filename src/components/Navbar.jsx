@@ -42,9 +42,9 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* LOGO */}
           <a href="#hero" className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-2xl bg-[#2e7d32] flex items-center justify-center shadow-md">
-              <span className="text-white text-lg font-bold">R</span>
-            </div>
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-1">
+          <img src="/public/logo.png" alt="" />
+             </div>
 
             <div>
               <h2 className="text-[15px] font-semibold text-gray-900 leading-none">

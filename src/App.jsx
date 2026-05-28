@@ -30,15 +30,25 @@ function Preloader({ onDone }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
       className="fixed inset-0 z-[999] flex flex-col items-center justify-center"
-      style={{ background: 'linear-gradient(135deg, #0d3d1f, #1a5c2a, #1a1a2e)' }}
+      style={{
+        background: "linear-gradient(135deg, #0d3d1f, #1a5c2a, #1a1a2e)",
+      }}
     >
       {/* Mandala bg */}
       <div className="absolute inset-0 opacity-5 flex items-center justify-center pointer-events-none">
         <svg width="500" height="500" viewBox="0 0 500 500">
-          {[40,80,120,160,200,240].map((r,i)=>(
-            <circle key={i} cx="250" cy="250" r={r} fill="none" stroke="white"
-              strokeWidth="0.6" strokeDasharray={`${r*0.4} ${r*0.15}`}
-              className={i%2===0 ? 'mandala-spin' : 'mandala-spin-reverse'} />
+          {[40, 80, 120, 160, 200, 240].map((r, i) => (
+            <circle
+              key={i}
+              cx="250"
+              cy="250"
+              r={r}
+              fill="none"
+              stroke="white"
+              strokeWidth="0.6"
+              strokeDasharray={`${r * 0.4} ${r * 0.15}`}
+              className={i % 2 === 0 ? "mandala-spin" : "mandala-spin-reverse"}
+            />
           ))}
         </svg>
       </div>
@@ -46,21 +56,36 @@ function Preloader({ onDone }) {
       <motion.div
         initial={{ scale: 0, rotate: -180 }}
         animate={{ scale: 1, rotate: 0 }}
-        transition={{ duration: 1, type: 'spring', stiffness: 120 }}
+        transition={{ duration: 1, type: "spring", stiffness: 120 }}
         className="w-20 h-20 rounded-full flex items-center justify-center mb-6 pulse-glow"
-        style={{ background: 'linear-gradient(135deg, #2d8a47, #e86a1a)' }}
+        style={{ background: "linear-gradient(135deg, #2d8a47, #e86a1a)" }}
       >
-        <span className="text-white font-black text-3xl" style={{ fontFamily: 'Cinzel,serif' }}>R</span>
+        <span
+          className="text-white font-black text-3xl"
+          style={{ fontFamily: "Cinzel,serif" }}
+        >
+          <img src="/public/favicon.png" alt="" />
+        </span>
       </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.8 }}
-        className="text-white text-2xl font-bold mb-2"
-        style={{ fontFamily: 'Cinzel,serif', letterSpacing: '3px' }}
+        className="
+    text-2xl 
+    font-bold 
+    mb-2 
+    text-[#D4AF37]
+    drop-shadow-[0_1px_2px_rgba(255,215,0,0.25)]
+  "
+        style={{
+          fontFamily: "Cinzel, serif",
+          letterSpacing: "3px",
+          textShadow: "0 1px 1px rgba(255,215,0,0.25)",
+        }}
       >
-        Rupeshseth Gugale
+        Rupeshseth
       </motion.h1>
 
       <motion.p
@@ -68,7 +93,13 @@ function Preloader({ onDone }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.7 }}
         className="mb-8"
-        style={{ fontFamily: 'Montserrat,sans-serif', fontSize: '12px', letterSpacing: '4px', color: '#a0e0b0', textTransform: 'uppercase' }}
+        style={{
+          fontFamily: "Montserrat,sans-serif",
+          fontSize: "12px",
+          letterSpacing: "4px",
+          color: "#a0e0b0",
+          textTransform: "uppercase",
+        }}
       >
         Leadership · Legacy · Service
       </motion.p>
@@ -77,12 +108,14 @@ function Preloader({ onDone }) {
       <motion.div
         className="h-0.5 rounded-full"
         initial={{ width: 0 }}
-        animate={{ width: '180px' }}
-        transition={{ duration: 2, ease: 'easeInOut' }}
-        style={{ background: 'linear-gradient(90deg, #2d8a47, #e86a1a, #d4a843)' }}
+        animate={{ width: "180px" }}
+        transition={{ duration: 2, ease: "easeInOut" }}
+        style={{
+          background: "linear-gradient(90deg, #2d8a47, #e86a1a, #d4a843)",
+        }}
       />
     </motion.div>
-  )
+  );
 }
 
 // WhatsApp FAB

@@ -693,22 +693,22 @@ Sent via Website Contact Form
               mb-6
             "
             >
-              <div
-                className="
-                w-14
-                h-14
-                rounded-full
-               bg-[#f0c96a]
-text-[#1d3b27]
-                flex
-                items-center
-                justify-center
-                text-white
-                text-2xl
-                font-bold
-              "
-              >
-                R
+              <div className="flex items-center justify-center mb-4">
+                <img
+                  className="
+      w-28
+      md:w-36
+      lg:w-40
+      h-auto
+      object-contain
+      drop-shadow-[0_4px_12px_rgba(255,215,0,0.35)]
+      hover:scale-105
+      transition-transform
+      duration-300
+    "
+                  src="/logo.png"
+                  alt="Rupeshseth Logo"
+                />
               </div>
 
               <div>
