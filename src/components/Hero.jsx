@@ -15,7 +15,6 @@ export default function Hero() {
       <div className="max-w-[1500px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-16 min-h-screen flex items-center">
         {/* GRID */}
         <div className="grid lg:grid-cols-[1fr_0.85fr] gap-10 xl:gap-16 items-center w-full">
-          
           {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -143,6 +142,7 @@ text-white      tracking-wide
               >
                 स्वावलंबी • आध्यात्मिक • दूरदर्शी
               </span>
+              <div className="w-2.5 h-2.5 rounded-full bg-[#f57c00]" />
             </div>
 
             {/* HEADING */}
@@ -181,11 +181,12 @@ text-[clamp(1.35rem,5.5vw,3.2rem)]  bg-[#b8860b]
         rounded-full
 text-[#8B1E1E]    text-md
     sm:text-base
-    font-semibold
+    font-bold
     tracking-wide
   "
             >
-              सनय छत्रपती शासन पक्ष, राष्ट्रीय कार्यकारी अध्यक्ष
+              सनय छत्रपती शासन पक्ष <br />
+               राष्ट्रीय कार्यकारी अध्यक्ष
             </div>
             {/* SUBTITLE */}
             <p
