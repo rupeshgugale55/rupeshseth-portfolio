@@ -271,6 +271,43 @@ export const NEWS_ARTICLES = [
     link: "https://timesofindia.indiatimes.com/entertainment/telugu/movie-details/ashwamedham/movieshow/70433935.cms",
     image: "/images/news/news2.png",
   },
+  {
+    title:
+      "Rupesh Gugale (Jain), Aurous Entertainment | Silly Monks Partnership",
+
+    source: "HYBIZTV HD",
+
+    date: "19 Jul 2019",
+
+    category: "Entertainment",
+
+    excerpt:
+      "Rupesh H. Gugale Jain of Aurous Avatar Entertainment spoke about the strategic collaboration with Silly Monks Entertainment for producing films across multiple regional cinema industries.",
+
+    type: "interview",
+
+    link: "https://www.youtube.com/watch?v=75i78or3TWM",
+
+    image: "/images/news/news3.png",
+  },
+  {
+    title: "Rupesh H Gugale Speech At Ashwamedham Trailer Launch Event",
+
+    source: "Silly Monks Tollywood",
+
+    date: "19 Jul 2019",
+
+    category: "Film Production",
+
+    excerpt:
+      "Rupesh H Gugale addressed the audience during the Ashwamedham trailer launch event alongside Dhruva Karunakar and Vennela Kishore, highlighting the partnership and vision behind the project.",
+
+    type: "video",
+
+    link: "https://www.youtube.com/watch?v=6Up9Aon0dxI",
+
+    image: "/images/news/news4.png",
+  },
 ];
 
 export const ACTIVITIES = [

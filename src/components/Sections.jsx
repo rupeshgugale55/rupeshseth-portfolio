@@ -81,11 +81,15 @@ export function News() {
             >
               <div className="h-1 bg-[#2e7d32]" />
               {article.image && (
-                <div className="w-full h-56 overflow-hidden">
+                <div className="w-full h-56 overflow-hidden bg-gray-200">
                   <img
                     src={article.image}
                     alt={article.title}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                      console.log("Image failed:", article.image);
+                    }}
                   />
                 </div>
               )}
