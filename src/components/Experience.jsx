@@ -206,6 +206,15 @@ export default function Experience() {
                   is managed efficiently from one place in Juhu, Mumbai — built
                   through practical knowledge, real-world learning, strong
                   relationships, and years of dedication.
+                  
+                  Today, the focus of
+                  life is not only business and growth, but also giving back to
+                  society through meaningful social work and helping people in
+                  every possible way. Anyone facing difficulties in life,
+                  seeking guidance, support, or help is always welcome to
+                  connect in Juhu, Mumbai. The aim for the rest of life is to
+                  serve people, support the community, and stand beside those
+                  who need help during difficult times.
                 </p>
               </div>
 
