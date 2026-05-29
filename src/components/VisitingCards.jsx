@@ -9,19 +9,17 @@ const CARDS = [
     type: "Business",
 
     // FRONT IMAGE
-    frontImage: "/business-card.png",
+    frontImage: "/images/visiting_card/social_card.jpeg",
 
     // BACK CONTENT
     back: {
       bg: "linear-gradient(135deg, #0f172a, #1e293b, #111827)",
       title: "Entrepreneur & Business Leader",
-      email: "contact@rupeshsethGugale.com",
+      // email: "contact@rupeshsethGugale.com",
       phone: "+91 98765 43210",
-      address: "Mumbai, Maharashtra, India",
+      address: "juhu, Mumbai, Maharashtra, India",
     },
   },
-
-   
 
   {
     id: 2,
@@ -162,7 +160,7 @@ function VisitingCard({ card }) {
 
               <div>
                 <p className="text-white/40 uppercase tracking-[3px] text-xs mb-3">
-                  Rupeshseth
+                  Rupeshseth Hemantji Gugale
                 </p>
 
                 <h3 className="text-[22px] font-bold leading-snug">
@@ -173,9 +171,9 @@ function VisitingCard({ card }) {
               {/* BOTTOM */}
 
               <div className="space-y-3">
-                <p className="text-sm text-white/85">📧 {card.back.email}</p>
+                <p className="text-sm text-white/85">  {card.back.email}</p>
 
-                <p className="text-sm text-white/85">📱 {card.back.phone}</p>
+                <p className="text-sm text-white/85">  {card.back.phone}</p>
 
                 <div className="w-16 h-[2px] bg-white/20 rounded-full" />
 
