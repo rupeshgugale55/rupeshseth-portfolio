@@ -15,6 +15,7 @@ export default function Hero() {
       <div className="max-w-[1500px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-16 min-h-screen flex items-center">
         {/* GRID */}
         <div className="grid lg:grid-cols-[1fr_0.85fr] gap-10 xl:gap-16 items-center w-full">
+          
           {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
