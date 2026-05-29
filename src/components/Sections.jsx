@@ -29,7 +29,7 @@ export function News() {
   });
 
   return (
-    <section id="media" className="py-15 bg-[#f8f7f4] relative overflow-hidden">
+    <section id="media" className="py-20 bg-[#f8f7f4] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* HEADER */}
 
@@ -361,7 +361,7 @@ export function Vision() {
   return (
     <section
       id="vision"
-      className="py-15 bg-[#f8f7f4] relative overflow-hidden"
+      className="pb-15 bg-[#f8f7f4] relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* HEADER */}

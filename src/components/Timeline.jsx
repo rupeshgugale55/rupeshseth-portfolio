@@ -220,8 +220,7 @@ export default function Timeline() {
   return (
     <section
       className="
-        py-10
-        lg:py-14
+         lg:py-14
         bg-[#f8f7f4]
         relative
         overflow-hidden

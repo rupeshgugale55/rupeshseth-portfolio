@@ -135,7 +135,7 @@ export const FAMILY = [
     role: "Heart of the Family",
   },
   {
-    name: "Smt. Monikaji Rupeshseth Gugale",
+    name: "Smt. Monikaji Rupeshseth Hemantji Gugale",
     relation: "Wife",
     description:
       "Partner in life's journey, emotional anchor, and the person who brings warmth and stability to every phase of growth.",
@@ -143,7 +143,7 @@ export const FAMILY = [
     role: "Life Partner & Support",
   },
   {
-    name: "Agam Rupeshseth Gugale",
+    name: "Agam Rupeshseth Hemantji Gugale",
     relation: "Son",
     description:
       "The greatest joy and the strongest motivation to build a legacy worthy of being inherited.",
@@ -202,10 +202,29 @@ export const ACHIEVEMENTS = [
 ];
 
 export const QUOTES = [
-  { text: "संघर्ष ही सच्ची पहचान बनाता है", translation: "Struggle alone creates true identity.", author: "Rupeshseth Gugale", bg: "green" },
-  { text: "जो परिवार के साथ है, वो दुनिया जीत सकता है", translation: "One who stands with family can conquer the world.", author: "Rupeshseth Gugale", bg: "orange" },
-  { text: "सेवा ही सबसे बड़ी पूजा है", translation: "Service is the greatest form of worship.", author: "Rupeshseth Gugale", bg: "green" },
-  { text: "From zero to legacy — one step at a time, with faith and fire.", author: "Rupeshseth Gugale", bg: "gold" },
+  {
+    text: "संघर्ष ही सच्ची पहचान बनाता है",
+    translation: "Struggle alone creates true identity.",
+    author: "Rupeshseth Hemantji Gugale",
+    bg: "green",
+  },
+  {
+    text: "जो परिवार के साथ है, वो दुनिया जीत सकता है",
+    translation: "One who stands with family can conquer the world.",
+    author: "Rupeshseth Hemantji Gugale",
+    bg: "orange",
+  },
+  {
+    text: "सेवा ही सबसे बड़ी पूजा है",
+    translation: "Service is the greatest form of worship.",
+    author: "Rupeshseth Hemantji Gugale",
+    bg: "green",
+  },
+  {
+    text: "From zero to legacy — one step at a time, with faith and fire.",
+    author: "Rupeshseth Hemantji Gugale",
+    bg: "gold",
+  },
 ];
 
 export const TESTIMONIALS = [

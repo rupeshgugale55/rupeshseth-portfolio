@@ -220,7 +220,7 @@ export default function Quotes() {
     <section
       id="quotes"
       className="
-        py-15
+        py-5
         lg:py-16
         bg-[#f8f7f4]
         relative

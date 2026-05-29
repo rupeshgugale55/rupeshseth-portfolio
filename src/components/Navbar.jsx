@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -15,6 +14,14 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+const location = useLocation();
+
+useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +69,11 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-[14px] font-medium text-gray-700 hover:text-[#f57c00] transition-colors duration-300"
+                className={`text-[14px] font-medium transition-colors duration-300 ${
+                  location.pathname === item.href
+                    ? "text-[#f57c00]"
+                    : "text-gray-700 hover:text-[#f57c00]"
+                }`}
               >
                 {item.label}
               </Link>
@@ -139,7 +150,11 @@ export default function Navbar() {
                     <Link
                       to={item.href}
                       onClick={() => setMenuOpen(false)}
-                      className="text-[17px] font-medium text-gray-800 hover:text-[#f57c00] transition-colors"
+                      className={`text-[17px] font-medium transition-colors ${
+                        location.pathname === item.href
+                          ? "text-[#f57c00]"
+                          : "text-gray-800 hover:text-[#f57c00]"
+                      }`}
                     >
                       {item.label}
                     </Link>

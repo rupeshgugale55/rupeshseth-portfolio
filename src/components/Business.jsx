@@ -254,13 +254,11 @@ export function Business() {
     <section
       id="business"
       className="
-        py-33
         lg:py-16
         bg-[#f8f7f4]
         relative
         overflow-hidden
-        lg:py-28
-      "
+       "
     >
       {/* BACKGROUND GLOW */}
 
@@ -379,8 +377,7 @@ export function Achievements() {
   return (
     <section
       className="
-        py-33
-        lg:py-16
+        py-22       lg:py-16
         bg-[#f8f7f4]
         relative
         overflow-hidden

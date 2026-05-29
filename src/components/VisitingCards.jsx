@@ -195,7 +195,7 @@ export default function VisitingCards() {
   });
 
   return (
-    <section id="cards" className="py-15 bg-[#f8f7f4] relative overflow-hidden">
+    <section id="cards" className="pt-7 pb-10 bg-[#f8f7f4] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* HEADER */}
 

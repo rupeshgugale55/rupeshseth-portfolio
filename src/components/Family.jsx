@@ -234,7 +234,7 @@ export default function Family() {
     <section
       id="family"
       className="
-        py-15
+        py-25
         lg:py-16
         bg-[#f8f7f4]
         relative

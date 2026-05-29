@@ -17,220 +17,6 @@ export default function Hero() {
         <div className="grid lg:grid-cols-[1fr_0.85fr] gap-10 xl:gap-16 items-center w-full">
           {/* LEFT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="
-    relative z-10 w-full py-7
-    flex flex-col
-    items-center lg:items-start
-    text-center lg:text-left
-  "
-          >
-            {/* BADGE */}
-            <div
-              className="
-    inline-flex items-center justify-center gap-2
-    px-4 py-2
-    rounded-full
-    bg-white border border-gray-200 shadow-sm
-    mb-6
-    mx-auto
-  "
-            >
-              <div className="w-2.5 h-2.5 rounded-full bg-[#2e7d32]" />
-
-              <span
-                className="
-      text-[14px] sm:text-sm
-      font-medium
-      text-gray-700
-      tracking-wide
-      whitespace-nowrap
-    "
-              >
-                स्वावलंबी • आध्यात्मिक • दूरदर्शी
-              </span>
-            </div>
-
-            {/* HEADING */}
-            <h1 className="font-black leading-tight">
-              {/* FIRST LINE */}
-              <span
-                className="
-      block
-      text-[clamp(2.6rem,11vw,5.8rem)]
-      bg-gradient-to-r
-      from-[#16351f]
-      via-[#1f5c34]
-      to-[#2e7d32]
-      bg-clip-text
-      text-transparent
-      pt-2
-    "
-              >
-                श्री. रुपेशसेठ
-              </span>
-
-              {/* SECOND LINE */}
-              <span
-                className="
-      block
-      text-[clamp(2.1rem,9vw,4.8rem)]
-      bg-gradient-to-r
-      from-[#1d3d25]
-      via-[#2e7d32]
-      to-[#f57c00]
-      bg-clip-text
-      text-transparent
-       pt-2 pb-2 mt-1
-    "
-              >
-                हेमंतजी गुगळे
-              </span>
-
-              {/* THIRD LINE */}
-              <span
-                className="
-      block
-       text-[clamp(2.1rem,9vw,4.8rem)]
-      bg-gradient-to-r
-      from-[#2e7d32]
-      via-[#7c8b22]
-      to-[#f57c00]
-      bg-clip-text
-      text-transparent
-      mt-1 pt-2
-    "
-              >
-                पाटील (जैन)
-              </span>
-            </h1>
-
-            {/* SUBTITLE */}
-            <p
-              className="
-      mt-4
-      text-[16px] sm:text-[15px] lg:text-[1.15rem]
-      text-[#f57c00]
-      font-semibold
-      leading-relaxed
-    "
-            >
-              Entrepreneur • Leader • Social Visionary
-            </p>
-
-            {/* DESCRIPTION */}
-            <p
-              className="
-      mt-5
-      text-gray-600
-      text-[16px] sm:text-[15px] lg:text-[17px]
-      leading-7 sm:leading-8
-      max-w-[620px]
-    "
-            >
-              From humble beginnings to national leadership — built on faith,
-              family, and the vision of meaningful leadership that inspires
-              generations.
-            </p>
-
-            {/* BUTTONS */}
-            <div
-              className="
-      mt-7
-      flex flex-col sm:flex-row
-      gap-3 sm:gap-4
-      w-full sm:w-auto
-    "
-            >
-              {/* PRIMARY BUTTON */}
-              <a
-                href="#journey"
-                className="
-        group
-        inline-flex items-center justify-center gap-3
-        w-full sm:w-auto
-        px-6 sm:px-7
-        py-3.5 sm:py-4
-        rounded-full
-        bg-[#2e7d32]
-        text-white
-        text-sm sm:text-base
-        font-semibold
-        shadow-xl shadow-[#2e7d32]/20
-        hover:scale-[1.03]
-        transition-all duration-300
-      "
-              >
-                <span>Discover Journey</span>
-
-                <svg
-                  className="
-          w-4 h-4 sm:w-5 sm:h-5
-          group-hover:translate-x-1
-          transition-all duration-300
-        "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
-
-              {/* SECONDARY BUTTON */}
-              <a
-                href="#contact"
-                className="
-        group
-        inline-flex items-center justify-center gap-3
-        w-full sm:w-auto
-        px-6 sm:px-7
-        py-3.5 sm:py-4
-        rounded-full
-        border border-gray-300
-        bg-white
-        text-gray-800
-        text-sm sm:text-base
-        font-semibold
-        hover:border-[#f57c00]
-        hover:text-[#f57c00]
-        hover:scale-[1.03]
-        transition-all duration-300
-        shadow-sm
-      "
-              >
-                <span>Connect Now</span>
-
-                <svg
-                  className="
-          w-4 h-4 sm:w-5 sm:h-5
-          group-hover:translate-x-1
-          transition-all duration-300
-        "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
-            </div>
-          </motion.div>
-
-          {/* RIGHT IMAGE */}
-          <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
@@ -292,7 +78,7 @@ export default function Hero() {
 
           h-[460px]
           sm:h-[580px]
-          lg:h-[720px]
+          lg:h-[520px]
 
           object-cover
           rounded-[32px]
@@ -313,58 +99,172 @@ export default function Hero() {
           pointer-events-none
         "
                 />
-
-                {/* FLOATING INFO CARD */}
-                <div
-                  className="
-          absolute
-          bottom-4 sm:bottom-6
-          left-4 sm:left-6
-          right-4 sm:right-6
-
-          bg-white/75
-          backdrop-blur-2xl
-          border border-white/50
-
-          rounded-2xl
-          px-4 sm:px-5
-          py-3 sm:py-4
-
-          flex items-center justify-between
-          shadow-xl
-        "
-                >
-                  {/* TEXT */}
-                  <div>
-                    <h3
-                      className="
-              text-[#16351f]
-              font-bold
-              text-base sm:text-lg
-              leading-tight
-            "
-                    >
-                      shri. Rupeshseth Hemantji Gugale
-                    </h3>
-
-                    <p
-                      className="
-              text-[12px] sm:text-sm
-              text-gray-600
-              mt-1
-            "
-                    >
-                      राष्ट्रीय कार्यकारी अध्यक्ष, सनय छत्रपती शासन पक्ष
-                    </p>
-                  </div>
-
-                  {/* ICON */}
-                </div>
               </div>
 
               {/* FLOATING BLUR DOTS */}
               <div className="absolute -top-5 -right-5 w-20 h-20 bg-[#f57c00]/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-5 -left-5 w-24 h-24 bg-[#2e7d32]/20 rounded-full blur-2xl" />
+            </div>
+          </motion.div>
+
+          {/* RIGHT IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            className="
+    relative z-10 w-full
+    flex flex-col
+    items-center lg:items-start
+    text-center lg:text-left
+  "
+          >
+            {/* BADGE */}
+            <div
+              className="
+    inline-flex items-center justify-center gap-2
+    px-4 py-2
+    rounded-full
+    bg-green-900 border border-gray-200 shadow-sm
+    mb-6
+    mx-auto
+  "
+            >
+              <div className="w-2.5 h-2.5 rounded-full bg-[#f57c00]" />
+
+              <span
+                className="
+      text-[14px] sm:text-sm
+      font-medium
+text-white      tracking-wide
+      whitespace-nowrap
+    "
+              >
+                स्वावलंबी • आध्यात्मिक • दूरदर्शी
+              </span>
+            </div>
+
+            {/* HEADING */}
+            <h1 className="font-black leading-tight">
+              {/* FIRST LINE */}
+              <span
+                className="
+    block
+text-[clamp(1.7rem,7vw,4rem)] bg-[#b8860b]
+    bg-clip-text
+    text-transparent
+    pt-2  
+  "
+              >
+                श्री. रुपेशसेठ
+              </span>
+
+              {/* SECOND LINE */}
+              <span
+                className="
+text-[clamp(1.35rem,5.5vw,3.2rem)]  bg-[#b8860b]
+    bg-clip-text
+    text-transparent
+    
+    "
+              >
+                हेमंतजी गुगळे पाटील (जैन)
+              </span>
+            </h1>
+            <div
+              className="
+    inline-flex
+    items-center
+    justify-center
+    px-3 mt-2
+        rounded-full
+text-[#8B1E1E]    text-md
+    sm:text-base
+    font-semibold
+    tracking-wide
+  "
+            >
+              सनय छत्रपती शासन पक्ष, राष्ट्रीय कार्यकारी अध्यक्ष
+            </div>
+            {/* SUBTITLE */}
+            <p
+              className="
+      mt-4
+      text-[16px] sm:text-[15px] lg:text-[1.15rem]
+      text-[#f57c00]
+      font-semibold
+      leading-relaxed
+    "
+            >
+              Entrepreneur • Leader • Social Visionary
+            </p>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+      mt-5
+      text-gray-600
+      text-[16px] sm:text-[15px] lg:text-[17px]
+      leading-7 sm:leading-8
+      max-w-[620px]
+    "
+            >
+              From humble beginnings to national leadership — built on faith,
+              family, and the vision of meaningful leadership that inspires
+              generations.
+            </p>
+
+            {/* BUTTONS */}
+            <div
+              className="
+      mt-7
+      flex flex-col sm:flex-row
+      gap-3 sm:gap-4
+      w-full sm:w-auto
+    "
+            >
+              {/* SECONDARY BUTTON */}
+              <a
+                href="/contact"
+                className="
+        group
+        inline-flex items-center justify-center gap-3
+        w-full sm:w-auto
+        px-6 sm:px-7
+        py-3.5 sm:py-4
+        rounded-full
+        border border-gray-300
+        bg-white
+        text-gray-800
+        text-sm sm:text-base
+        font-semibold
+        hover:border-[#f57c00]
+        hover:text-[#f57c00]
+        hover:scale-[1.03]
+        transition-all duration-300
+        shadow-sm
+      "
+              >
+                <span>Connect Now</span>
+
+                <svg
+                  className="
+          w-4 h-4 sm:w-5 sm:h-5
+          group-hover:translate-x-1
+          transition-all duration-300
+        "
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
             </div>
           </motion.div>
         </div>

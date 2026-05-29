@@ -32,7 +32,7 @@ export default function Spiritual() {
     <section
       id="spiritual"
       className="
-        py-12
+        py-20
         lg:py-16
         bg-[#f8f7f4]
         relative
