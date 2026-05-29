@@ -13,10 +13,10 @@ export default function SocialWork() {
     <section
       id="social"
       className="
-        py-15
+        py-33
         bg-[#f8f7f4]
         relative
-        overflow-hidden
+        overflow-hidden  lg:py-28
       "
     >
       {/* SOFT GLOW */}

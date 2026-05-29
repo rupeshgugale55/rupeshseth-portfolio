@@ -128,8 +128,8 @@ Sent via Website Contact Form
         className="
           relative
           overflow-hidden
-          py-15
-          bg-[#f8f7f4]
+          py-33
+          bg-[#f8f7f4]  lg:py-28
         "
       >
         {/* BACKGROUND GLOWS */}
@@ -668,7 +668,7 @@ Sent via Website Contact Form
         relative
         overflow-hidden
         bg-[#1d3b27]
-        py-15
+        py-33
       "
       >
         <div

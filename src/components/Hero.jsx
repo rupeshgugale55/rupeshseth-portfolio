@@ -54,44 +54,56 @@ export default function Hero() {
             </div>
 
             {/* HEADING */}
-            <h1
-              className="
-    font-black
-    leading-[0.9]
-    tracking-[-2px]
-  "
-            >
+            <h1 className="font-black leading-tight">
               {/* FIRST LINE */}
               <span
                 className="
       block
-     text-[clamp(2.6rem,11vw,5.8rem)]
+      text-[clamp(2.6rem,11vw,5.8rem)]
       bg-gradient-to-r
       from-[#16351f]
       via-[#1f5c34]
       to-[#2e7d32]
       bg-clip-text
-      text-transparent mb-4
+      text-transparent
+      pt-2
     "
               >
-                Rupeshseth
+                श्री. रुपेशसेठ
               </span>
 
               {/* SECOND LINE */}
               <span
                 className="
       block
-      -mt-1
       text-[clamp(2.1rem,9vw,4.8rem)]
       bg-gradient-to-r
       from-[#1d3d25]
       via-[#2e7d32]
       to-[#f57c00]
       bg-clip-text
-      text-transparent  
+      text-transparent
+       pt-2 pb-2 mt-1
     "
               >
-                Hemantji Gugale <span className="block mt-3"> Patil (Jain)</span>
+                हेमंतजी गुगळे
+              </span>
+
+              {/* THIRD LINE */}
+              <span
+                className="
+      block
+       text-[clamp(2.1rem,9vw,4.8rem)]
+      bg-gradient-to-r
+      from-[#2e7d32]
+      via-[#7c8b22]
+      to-[#f57c00]
+      bg-clip-text
+      text-transparent
+      mt-1 pt-2
+    "
+              >
+                पाटील (जैन)
               </span>
             </h1>
 
@@ -228,20 +240,6 @@ export default function Hero() {
     lg:mt-0
   "
           >
-            {/* OUTER GLOW */}
-            {/* <div
-                className="
-        absolute
-        -inset-6
-        bg-gradient-to-br
-        from-[#2e7d32]/20
-        via-transparent
-        to-[#f57c00]/20
-        blur-3xl
-        rounded-[50px]
-      "
-              /> */}
-
             {/* FLOATING RING */}
             <div
               className="
@@ -346,7 +344,7 @@ export default function Hero() {
               leading-tight
             "
                     >
-                      Rupeshseth Gugale
+                      shri. Rupeshseth Hemantji Gugale
                     </h3>
 
                     <p
@@ -356,37 +354,11 @@ export default function Hero() {
               mt-1
             "
                     >
-                      Entrepreneur & Visionary
+                      राष्ट्रीय कार्यकारी अध्यक्ष, सनय छत्रपती शासन पक्ष
                     </p>
                   </div>
 
                   {/* ICON */}
-                  <div
-                    className="
-            w-11 h-11 sm:w-12 sm:h-12
-            rounded-2xl
-            bg-gradient-to-br
-            from-[#2e7d32]
-            to-[#f57c00]
-
-            flex items-center justify-center
-            shadow-lg
-          "
-                  >
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13 7h4m0 0v4m0-4L10 14"
-                      />
-                    </svg>
-                  </div>
                 </div>
               </div>
 

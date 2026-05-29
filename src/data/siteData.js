@@ -105,7 +105,7 @@ export const TIMELINE = [
 
 export const SPIRITUALITY = {
   primary: "Swami Samarth",
-  inspired: ["Swami Vivekananda", "Chhatrapati Shivaji Maharaj", "Gautama Buddha"],
+  inspired: ["Gautama Buddha","Chhatrapati Shivaji Maharaj","Swami Vivekananda"],
   guardians: ["Swami Samarth", "Mastan Baba", "Grandfather's Blessings"],
   contribution: "Contributed toward building a Swami Samarth temple in Shaniwar Peth, Pune",
   philosophy: "Spirituality is not separate from success — it IS the foundation of true achievement.",
@@ -118,13 +118,62 @@ export const SPIRITUALITY = {
 };
 
 export const FAMILY = [
-  { name: "Hemanthseth Kanakmalji Gugale", relation: "Father", description: "The pillar of strength, wisdom, and values. His guidance laid the foundation of discipline and integrity.", emoji: "👨", role: "Backbone & Guiding Light" },
-  { name: "Anjaliji Hemantji Gugale", relation: "Mother", description: "Source of unconditional love, prayers, and blessings. Her faith in her son has been an unshakeable force.", emoji: "👩", role: "Heart of the Family" },
-  { name: "Monikaji Rupeshseth Gugale", relation: "Wife", description: "Partner in life's journey, emotional anchor, and the person who brings warmth and stability to every phase of growth.", emoji: "💑", role: "Life Partner & Support" },
-  { name: "Agam Rupeshseth Gugale", relation: "Son", description: "The greatest joy and the strongest motivation to build a legacy worthy of being inherited.", emoji: "👦", role: "Legacy & Future" },
-  { name: "Shwetaji Kamleshji Jakotia", relation: "Sister", description: "Bond of love, trust, and support that has been constant through every phase of life.", emoji: "👧", role: "Strength & Love" },
-  { name: "Nishita & Pari", relation: "Nieces", description: "The little joys of the family who bring smiles, love, and lightness to every gathering.", emoji: "🌸", role: "Joy & Brightness" },
-  { name: "Shri Kakanmalji Chunilalji Gugale", relation: "Grandfather (Late)", description: "His greatest supporter, idol, and guiding force. Every major opportunity in his early life came through the grandfather's values, references, and blessings.", emoji: "🕊️", role: "Eternal Inspiration" },
+  {
+    name: "Shri. Hemanthseth Kanakmalji Gugale",
+    relation: "Father",
+    description:
+      "The pillar of strength, wisdom, and values. His guidance laid the foundation of discipline and integrity.",
+    emoji: "👨",
+    role: "Backbone & Guiding Light",
+  },
+  {
+    name: "Smt. Anjaliji Hemantji Gugale",
+    relation: "Mother",
+    description:
+      "Source of unconditional love, prayers, and blessings. Her faith in her son has been an unshakeable force.",
+    emoji: "👩",
+    role: "Heart of the Family",
+  },
+  {
+    name: "Smt. Monikaji Rupeshseth Gugale",
+    relation: "Wife",
+    description:
+      "Partner in life's journey, emotional anchor, and the person who brings warmth and stability to every phase of growth.",
+    emoji: "💑",
+    role: "Life Partner & Support",
+  },
+  {
+    name: "Agam Rupeshseth Gugale",
+    relation: "Son",
+    description:
+      "The greatest joy and the strongest motivation to build a legacy worthy of being inherited.",
+    emoji: "👦",
+    role: "Legacy & Future",
+  },
+  {
+    name: "Smt. Shwetaji Kamleshji Jakotia",
+    relation: "Sister",
+    description:
+      "Bond of love, trust, and support that has been constant through every phase of life.",
+    emoji: "👧",
+    role: "Strength & Love",
+  },
+  {
+    name: "Nishita & Pari",
+    relation: "Nieces",
+    description:
+      "The little joys of the family who bring smiles, love, and lightness to every gathering.",
+    emoji: "🌸",
+    role: "Joy & Brightness",
+  },
+  {
+    name: "Shri. Kakanmalji Chunilalji Gugale",
+    relation: "Grandfather (Late)",
+    description:
+      "His greatest supporter, idol, and guiding force. Every major opportunity in his early life came through the grandfather's values, references, and blessings.",
+    emoji: "🕊️",
+    role: "Eternal Inspiration",
+  },
 ];
 
 export const BUSINESSES = [

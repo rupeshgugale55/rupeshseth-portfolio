@@ -1,28 +1,26 @@
-import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaWhatsapp, FaArrowUp } from "react-icons/fa";
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Timeline from './components/Timeline'
-import Spiritual from './components/Spiritual'
-import Family from './components/Family'
-import { Business, Achievements } from './components/Business'
-import SocialWork from './components/SocialWork'
-import Gallery from './components/Gallery'
-import Quotes from './components/Quotes'
-import Events from './components/Events'
-import Documents from './components/Documents'
-import VisitingCards from './components/VisitingCards'
-import { News, Activities, Vision } from './components/Sections'
-import Contact from './components/Contact'
- 
-// Preloader
+
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import BusinessPage from "./pages/BusinessPage";
+import SocialWorkPage from "./pages/SocialWorkPage";
+import GalleryPage from "./pages/GalleryPage";
+import ContactPage from "./pages/ContactPage";
+
+/* =========================
+   PRELOADER
+========================= */
+
 function Preloader({ onDone }) {
   useEffect(() => {
-    const t = setTimeout(onDone, 2600)
-    return () => clearTimeout(t)
-  }, [onDone])
+    const t = setTimeout(onDone, 2600);
+    return () => clearTimeout(t);
+  }, [onDone]);
 
   return (
     <motion.div
@@ -34,7 +32,7 @@ function Preloader({ onDone }) {
         background: "linear-gradient(135deg, #0d3d1f, #1a5c2a, #1a1a2e)",
       }}
     >
-      {/* Mandala bg */}
+      {/* MANDALA */}
       <div className="absolute inset-0 opacity-5 flex items-center justify-center pointer-events-none">
         <svg width="500" height="500" viewBox="0 0 500 500">
           {[40, 80, 120, 160, 200, 240].map((r, i) => (
@@ -53,41 +51,34 @@ function Preloader({ onDone }) {
         </svg>
       </div>
 
+      {/* LOGO */}
       <motion.div
         initial={{ scale: 0, rotate: -180 }}
         animate={{ scale: 1, rotate: 0 }}
         transition={{ duration: 1, type: "spring", stiffness: 120 }}
         className="w-20 h-20 rounded-full flex items-center justify-center mb-6 pulse-glow"
-        style={{ background: "linear-gradient(135deg, #2d8a47, #e86a1a)" }}
+        style={{
+          background: "linear-gradient(135deg, #2d8a47, #e86a1a)",
+        }}
       >
-        <span
-          className="text-white font-black text-3xl"
-          style={{ fontFamily: "Cinzel,serif" }}
-        >
-          <img src="/favicon.png" alt="" />
-        </span>
+        <img src="/favicon.png" alt="Logo" />
       </motion.div>
 
+      {/* TITLE */}
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.8 }}
-        className="
-    text-2xl 
-    font-bold 
-    mb-2 
-    text-[#D4AF37]
-    drop-shadow-[0_1px_2px_rgba(255,215,0,0.25)]
-  "
+        className="text-2xl font-bold mb-2 text-[#D4AF37]"
         style={{
           fontFamily: "Cinzel, serif",
           letterSpacing: "3px",
-          textShadow: "0 1px 1px rgba(255,215,0,0.25)",
         }}
       >
         Rupeshseth
       </motion.h1>
 
+      {/* SUBTITLE */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -104,7 +95,7 @@ function Preloader({ onDone }) {
         Leadership · Legacy · Service
       </motion.p>
 
-      {/* Progress bar */}
+      {/* LOADER BAR */}
       <motion.div
         className="h-0.5 rounded-full"
         initial={{ width: 0 }}
@@ -118,7 +109,10 @@ function Preloader({ onDone }) {
   );
 }
 
-// WhatsApp FAB
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
 function WhatsAppFAB() {
   return (
     <motion.a
@@ -126,59 +120,44 @@ function WhatsAppFAB() {
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0 }}
-      animate={{
-        scale: [1, 1.08, 1],
-      }}
+      animate={{ scale: [1, 1.08, 1] }}
       transition={{
         delay: 0.5,
         duration: 1,
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      whileHover={{
-        scale: 1.12,
-      }}
+      whileHover={{ scale: 1.12 }}
       whileTap={{ scale: 0.95 }}
       className="
         fixed bottom-11 right-4 z-50
-        w-16 h-16
-        rounded-full
+        w-16 h-16 rounded-full
         flex items-center justify-center
-        text-white
-        shadow-2xl
-        no-underline
+        text-white shadow-2xl
         bg-green-500
       "
-      style={{
-        boxShadow: "0 0 0 rgba(34,197,94,0.7)",
-      }}
-      title="WhatsApp"
     >
-      {/* Pulse Ring */}
-      <span
-        className="
-          absolute inset-0
-          rounded-full
-          bg-green-400
-          animate-ping
-          opacity-40
-        "
-      />
-
-      {/* Icon */}
+      <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-40" />
       <FaWhatsapp className="text-4xl relative z-10" />
     </motion.a>
   );
 }
 
-// Scroll to top
+/* =========================
+   SCROLL TOP
+========================= */
+
 function ScrollTop() {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
-    const fn = () => setShow(window.scrollY > 600)
-    window.addEventListener('scroll', fn)
-    return () => window.removeEventListener('scroll', fn)
-  }, [])
+    const fn = () => setShow(window.scrollY > 600);
+
+    window.addEventListener("scroll", fn);
+
+    return () => window.removeEventListener("scroll", fn);
+  }, []);
+
   return (
     <AnimatePresence>
       {show && (
@@ -186,9 +165,20 @@ function ScrollTop() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-11 left-4 z-50 w-11 h-11 rounded-full flex items-center justify-center text-white shadow-xl border border-white/20 bg-slate-800"
-          title="Back to top"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
+          className="
+            fixed bottom-11 left-4 z-50
+            w-11 h-11 rounded-full
+            flex items-center justify-center
+            text-white shadow-xl
+            border border-white/20
+            bg-slate-800
+          "
         >
           <FaArrowUp className="text-white text-sm" />
         </motion.button>
@@ -197,10 +187,13 @@ function ScrollTop() {
   );
 }
 
+/* =========================
+   APP
+========================= */
+
 export default function App() {
-  const [loaded, setLoaded] = useState(false)
- 
- 
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <>
       <AnimatePresence>
@@ -208,31 +201,28 @@ export default function App() {
       </AnimatePresence>
 
       {loaded && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Timeline />
-            <Quotes />
-            <Spiritual />
-            <Family />
-            <Business />
-            <Achievements />
-            <SocialWork />
-            <Gallery />
-            <Events />
-            <News />
-            <Activities />
-            <VisitingCards />
-            {/* <Documents /> */}
-             <Vision />
-            <Contact />
-          </main>
-          <WhatsAppFAB />
-          <ScrollTop />
-        </motion.div>
+        <BrowserRouter>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Navbar />
+
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/business" element={<BusinessPage />} />
+              <Route path="/social-work" element={<SocialWorkPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+
+            <WhatsAppFAB />
+            <ScrollTop />
+          </motion.div>
+        </BrowserRouter>
       )}
     </>
-  )
+  );
 }

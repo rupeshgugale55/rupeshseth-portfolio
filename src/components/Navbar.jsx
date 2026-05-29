@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const NAV_ITEMS = [
-  { label: "Journey", href: "#journey" },
-  { label: "Spiritual", href: "#spiritual" },
-  { label: "Family", href: "#family" },
-  { label: "Business", href: "#business" },
-  { label: "Social Work", href: "#social" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Vision", href: "#vision" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Business", href: "/business" },
+  { label: "Social Work", href: "/social-work" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -41,10 +40,10 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* LOGO */}
-          <a href="#hero" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-1">
-          <img src="/logo.png" alt="" />
-             </div>
+              <img src="/logo.png" alt="Logo" />
+            </div>
 
             <div>
               <h2 className="text-[15px] font-semibold text-gray-900 leading-none">
@@ -55,29 +54,29 @@ export default function Navbar() {
                 Leadership • Legacy • Service
               </p>
             </div>
-          </a>
+          </Link>
 
           {/* DESKTOP NAV */}
           <div className="hidden lg:flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="text-[14px] font-medium text-gray-700 hover:text-[#f57c00] transition-colors duration-300"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-4">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="hidden md:flex items-center justify-center px-5 py-3 rounded-2xl bg-[#2e7d32] text-white text-sm font-medium hover:bg-[#256c2b] transition-all duration-300"
             >
               Connect
-            </a>
+            </Link>
 
             <button
               onClick={() => setMenuOpen(true)}
@@ -90,10 +89,10 @@ export default function Navbar() {
       </motion.nav>
 
       {/* MOBILE MENU */}
-
       <AnimatePresence>
         {menuOpen && (
           <>
+            {/* BACKDROP */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -102,6 +101,7 @@ export default function Navbar() {
               className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[90]"
             />
 
+            {/* MENU */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -130,29 +130,32 @@ export default function Navbar() {
               {/* LINKS */}
               <div className="flex flex-col gap-6">
                 {NAV_ITEMS.map((item, i) => (
-                  <motion.a
+                  <motion.div
                     key={item.label}
-                    href={item.href}
                     initial={{ opacity: 0, x: 40 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    onClick={() => setMenuOpen(false)}
-                    className="text-[17px] font-medium text-gray-800 hover:text-[#f57c00] transition-colors"
                   >
-                    {item.label}
-                  </motion.a>
+                    <Link
+                      to={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="text-[17px] font-medium text-gray-800 hover:text-[#f57c00] transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
 
               {/* BUTTON */}
               <div className="mt-auto pt-10">
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   onClick={() => setMenuOpen(false)}
                   className="w-full flex items-center justify-center bg-[#2e7d32] text-white py-4 rounded-2xl font-medium hover:bg-[#256c2b] transition-all"
                 >
                   Connect Now
-                </a>
+                </Link>
               </div>
             </motion.div>
           </>

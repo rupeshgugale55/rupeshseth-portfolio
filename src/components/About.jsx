@@ -1,33 +1,34 @@
-import { motion } from "framer-motion";
-import { Sprout, Building2, HeartHandshake, Rocket } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Sprout,
+  Building2,
+  HeartHandshake,
+  Rocket,
+  ChevronDown,
+  Quote,
+} from "lucide-react";
 import { useInView } from "react-intersection-observer";
 import { ABOUT } from "../data/siteData";
-import { Quote } from "lucide-react";
-
-/* =========================
+ import { useState } from "react";
+  /* =========================
    STORY CARD
 ========================= */
 
-function StoryBlock({ icon, title, text, index }) {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.15,
-  });
-
+function StoryBlock({ icon, title, text, index, open, setOpen }) {
+ 
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, y: 30 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{
         duration: 0.5,
         delay: index * 0.06,
       }}
-      whileHover={{ y: -4 }}
+      onClick={() => setOpen(open ? null : index)}
       className="
         group
         relative
-        h-full
         rounded-[24px]
         border
         border-white/50
@@ -40,69 +41,73 @@ function StoryBlock({ icon, title, text, index }) {
         hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]
         transition-all
         duration-300
+        cursor-pointer
       "
     >
       {/* TOP GLOW */}
       <div className="absolute top-0 right-0 w-24 h-24 bg-[#2e7d32]/5 rounded-full blur-3xl" />
 
-      {/* TOP ROW */}
-      <div className="flex items-center gap-4 mb-5 relative z-10">
-        {/* ICON */}
-        <div
-          className="
-            w-12
-            h-12
-            rounded-2xl
-            bg-gradient-to-br
-            from-[#2e7d32]/10
-            to-[#f57c00]/10
-            text-[#2e7d32]
-            flex
-            items-center
-            justify-center
-            shadow-sm
-            group-hover:scale-110
-            transition-all
-            duration-300
-          "
-        >
-          {icon}
+      {/* HEADER */}
+      <div className="flex items-center justify-between relative z-10">
+        <div className="flex items-center gap-4">
+          {/* ICON */}
+          <div
+            className="
+              w-12
+              h-12
+              rounded-2xl
+              bg-gradient-to-br
+              from-[#2e7d32]/10
+              to-[#f57c00]/10
+              text-[#2e7d32]
+              flex
+              items-center
+              justify-center
+              shadow-sm
+            "
+          >
+            {icon}
+          </div>
+
+          {/* TITLE */}
+          <h3 className="font-semibold text-gray-900 text-xl">{title}</h3>
         </div>
 
-        {/* TITLE */}
-        <h3
-          className="
-             font-semibold
-            text-gray-900
-            leading-tight
-            mb-1 text-xl
-          "
-        >
-          {title}
-        </h3>
+        {/* ARROW */}
+        <ChevronDown
+          className={`transition-transform duration-300 ${
+            open ? "rotate-180" : ""
+          }`}
+        />
       </div>
 
-      {/* TEXT */}
-      <p
-        className="
-         text-gray-600 leading-8 text-[16px]
-        "
-      >
-        {text}
-      </p>
+      {/* CONTENT */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            className="overflow-hidden"
+          >
+            <p className="text-gray-600 leading-8 text-[16px] mt-5">{text}</p>
 
-      {/* BOTTOM LINE */}
-      <div
-        className="
-          mt-5
-          w-14
-          h-[3px]
-          rounded-full
-          bg-gradient-to-r
-          from-[#2e7d32]
-          to-[#f57c00]
-        "
-      />
+            {/* LINE */}
+            <div
+              className="
+                mt-5
+                w-14
+                h-[3px]
+                rounded-full
+                bg-gradient-to-r
+                from-[#2e7d32]
+                to-[#f57c00]
+              "
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
@@ -112,6 +117,7 @@ function StoryBlock({ icon, title, text, index }) {
 ========================= */
 
 export default function About() {
+  const [openCard, setOpenCard] = useState(null);
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -147,7 +153,7 @@ export default function About() {
         relative
         overflow-hidden
         bg-[#f8f7f4]
-        py-15
+        py-33
         lg:py-28
       "
     >
@@ -260,11 +266,17 @@ export default function About() {
             md:grid-cols-2
             gap-6
             lg:gap-8
-            items-stretch
+            items-start
           "
         >
           {stories.map((s, i) => (
-            <StoryBlock key={i} {...s} index={i} />
+            <StoryBlock
+              key={i}
+              {...s}
+              index={i}
+              open={openCard === i}
+              setOpen={setOpenCard}
+            />
           ))}
         </div>
 

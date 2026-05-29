@@ -208,10 +208,10 @@ export default function Gallery() {
     <section
       id="gallery"
       className="
-        pt-8 pb-10
+       py-33
         bg-[#f8f7f4]
         relative
-        overflow-hidden
+        overflow-hidden  lg:py-28
       "
     >
       {/* GLOW */}
@@ -484,7 +484,6 @@ max-w-5xl                w-full
               </div>
 
               {/* CONTENT */}
- 
             </motion.div>
           </motion.div>
         )}
