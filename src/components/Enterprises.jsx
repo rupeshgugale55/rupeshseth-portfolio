@@ -76,13 +76,9 @@ function BusinessCard({
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-900 text-xl">
-              {title}
-            </h3>
+            <h3 className="font-semibold text-gray-900 text-xl">{title}</h3>
 
-            <p className="text-sm text-[#f57c00] mt-1">
-              {subtitle}
-            </p>
+            <p className="text-sm text-[#f57c00] mt-1">{subtitle}</p>
           </div>
         </div>
 
@@ -124,13 +120,17 @@ function BusinessCard({
                   "
                 >
                   <MapPin
-                    size={18}
-                    className="text-[#2e7d32] mt-1"
+                    size={20}
+                    className="
+    text-[#2e7d32]
+    mt-1
+    flex-shrink-0
+    min-w-[20px]
+    min-h-[20px]
+  "
                   />
 
-                  <p className="text-sm leading-7 text-gray-700">
-                    {loc}
-                  </p>
+                  <p className="text-sm leading-7 text-gray-700">{loc}</p>
                 </div>
               ))}
             </div>
@@ -171,7 +171,7 @@ export default function Enterprises() {
 
     {
       icon: <Building2 size={24} />,
-      title: "Namo Nest Dormitory",
+      title: "Namo Nest Dormitory ",
       subtitle: "Modern Stay Solutions",
       details:
         "Affordable and modern dormitory accommodation venture serving travelers, professionals, and working individuals in Mumbai.",

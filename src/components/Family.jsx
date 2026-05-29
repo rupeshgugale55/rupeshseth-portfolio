@@ -105,31 +105,29 @@ function FamilyCard({ member, index }) {
       {/* CONTENT */}
 
       <div
-        className={`
-          relative
-          z-10
-          flex
-          gap-4
-          items-start
-
-          ${isGrandfather ? "flex-col md:flex-row" : ""}
-        `}
+        className="
+    relative
+    z-10
+    grid
+    grid-cols-[56px_1fr]
+    gap-4
+    items-start
+  "
       >
         {/* ICON */}
 
         <div
           className="
-            flex-shrink-0
-            w-14
-            h-14
-            rounded-2xl
-            flex
-            items-center
-            justify-center
-            bg-gradient-to-br
-            from-[#2e7d32]/10
-            to-[#f57c00]/10
-          "
+    w-14
+    h-14
+    rounded-2xl
+    flex
+    items-center
+    justify-center
+    bg-gradient-to-br
+    from-[#2e7d32]/10
+    to-[#f57c00]/10
+  "
         >
           <Icon
             size={24}
