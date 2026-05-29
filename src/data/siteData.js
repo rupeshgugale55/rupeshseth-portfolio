@@ -119,6 +119,14 @@ export const SPIRITUALITY = {
 
 export const FAMILY = [
   {
+    name: "Shri. Kakanmalji Chunilalji Gugale",
+    relation: "Grandfather (Late)",
+    description:
+      "His greatest supporter, idol, and guiding force. Every major opportunity in his early life came through the grandfather's values, references, and blessings.",
+    emoji: "🕊️",
+    role: "Eternal Inspiration",
+  },
+  {
     name: "Shri. Hemanthseth Kanakmalji Gugale",
     relation: "Father",
     description:
@@ -165,14 +173,6 @@ export const FAMILY = [
       "The little joys of the family who bring smiles, love, and lightness to every gathering.",
     emoji: "🌸",
     role: "Joy & Brightness",
-  },
-  {
-    name: "Shri. Kakanmalji Chunilalji Gugale",
-    relation: "Grandfather (Late)",
-    description:
-      "His greatest supporter, idol, and guiding force. Every major opportunity in his early life came through the grandfather's values, references, and blessings.",
-    emoji: "🕊️",
-    role: "Eternal Inspiration",
   },
 ];
 
