@@ -259,9 +259,7 @@ Sent via Website Contact Form
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
               className="
-                bg-white
-                rounded-[32px]
-                border
+                bg-white rounded-[32px] border
                 border-gray-100
                 p-5
                 sm:p-7
