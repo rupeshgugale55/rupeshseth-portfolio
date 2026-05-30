@@ -175,18 +175,28 @@ text-[clamp(1.35rem,5.5vw,3.2rem)]  bg-[#b8860b]
             <div
               className="
     inline-flex
+    flex-col
     items-center
     justify-center
-    px-3 mt-2
-        rounded-full
-text-[#8B1E1E]    text-md
-    sm:text-base
+    px-3
+    mt-2
+    rounded-full
+    text-[#8B1E1E]
     font-bold
     tracking-wide
   "
             >
-              सनय छत्रपती शासन पक्ष <br />
-               राष्ट्रीय कार्यकारी अध्यक्ष
+              {/* First Line */}
+              <div className="flex items-center gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#f57c00]" />
+
+                <span className="text-xl">सनय छत्रपती शासन पक्ष</span>
+
+                <div className="w-2.5 h-2.5 rounded-full bg-[#f57c00]" />
+              </div>
+
+              {/* Second Line */}
+              <span className="text-lg mt-1">-: राष्ट्रीय कार्यकारी अध्यक्ष :-</span>
             </div>
             {/* SUBTITLE */}
             <p
